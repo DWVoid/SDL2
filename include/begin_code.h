@@ -56,10 +56,10 @@
 #   ifdef BUILD_SDL
 #    define DECLSPEC
 #   else
-#    define DECLSPEC    __declspec(dllimport)
+#    define DECLSPEC
 #   endif
 #  else
-#   define DECLSPEC __declspec(dllexport)
+#   define DECLSPEC
 #  endif
 # elif defined(__OS2__)
 #   ifdef BUILD_SDL
@@ -69,7 +69,7 @@
 #   endif
 # else
 #  if defined(__GNUC__) && __GNUC__ >= 4
-#   define DECLSPEC __attribute__ ((visibility("default")))
+#   define DECLSPEC __attribute__ ((visibility("hidden")))
 #  else
 #   define DECLSPEC
 #  endif

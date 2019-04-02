@@ -1391,6 +1391,7 @@ elseif(WINDOWS)
     list(APPEND SDL_LIBS "-lmingw32" "-lSDL2main" "-mwindows")
   endif()
 elseif(APPLE)
+  set(SDL_FRAMEWORK_IOKIT 1)
   # TODO: rework this all for proper MacOS X, iOS and Darwin support
 
   # We always need these libs on macOS at the moment.
