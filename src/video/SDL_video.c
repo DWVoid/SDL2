@@ -4105,7 +4105,8 @@ void SDL_Vulkan_UnloadLibrary(void)
 
 SDL_bool SDL_Vulkan_GetInstanceExtensions(SDL_Window *window, unsigned *count, const char **names)
 {
-    if (window) {
+    // TODO: THIS Function has ABSOLUTELY Nothing to do with the window. Commented for now, wait up upstream mods.
+    /*if (window) {
         CHECK_WINDOW_MAGIC(window, SDL_FALSE);
 
         if (!(window->flags & SDL_WINDOW_VULKAN))
@@ -4118,7 +4119,7 @@ SDL_bool SDL_Vulkan_GetInstanceExtensions(SDL_Window *window, unsigned *count, c
     if (!count) {
         SDL_InvalidParamError("count");
         return SDL_FALSE;
-    }
+    }*/
 
     return _this->Vulkan_GetInstanceExtensions(_this, window, count, names);
 }
